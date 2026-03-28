@@ -729,9 +729,9 @@
 
     // Cargar datos en paralelo
     const [modelos, opciones, colores] = await Promise.all([
-      db('modelos', '?activo=eq.true&order=nombre'),
-      db('opciones', '?activo=eq.true&order=orden'),
-      db('colores', '?activo=eq.true&order=orden'),
+      db('modelos', '?activo=eq.true&order=nombre.asc'),
+      db('opciones', '?activo=eq.true&order=orden.asc'),
+      db('colores', '?activo=eq.true&order=orden.asc'),
     ]);
 
     state.modelos   = modelos;
