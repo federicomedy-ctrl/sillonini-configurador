@@ -581,7 +581,7 @@ const S = {
 // ============================================
 function params() {
   const p = new URLSearchParams(window.location.search);
-  S.chatId    = p.get('chat_id')    || null;
+  S.chatId    = p.get('chat_id') || p.get('chatid') || null; // acepta ambas
   S.sessionId = p.get('session_id') || S.sessionId;
   return p.get('modelo') || null;
 }
